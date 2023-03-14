@@ -29,5 +29,5 @@ def generate_numbers(seed1: int, seed2: int, iterations: int):
         xi = get_n_middle_digits(str(seed1 * seed2), digits)
         seed1 = seed2
         seed2 = xi
-        numbers.append(round(xi * pow(10, -digits), digits))
+        numbers.append(truncate_float(xi * pow(10, -digits), digits))
     return numbers

@@ -30,6 +30,6 @@ def generate_numbers(n, seeds: [int], m, iterations):
         xi = (seeds[n - 1] + seeds[0]) % m
         seeds.pop(0)
         seeds.append(xi)
-        numbers.append(round(xi / (m - 1), 4))
+        numbers.append(truncate_float(xi / (m - 1), 4))
     return numbers
 

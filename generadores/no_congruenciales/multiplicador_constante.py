@@ -27,5 +27,5 @@ def generate_numbers(seed: int, a: int, iterations: int):
     digits = len(str(seed))
     for i in range(iterations):
         seed = get_n_middle_digits(str(seed * a), digits)
-        numbers.append(round(seed * pow(10, -digits), digits))
+        numbers.append(truncate_float(seed * pow(10, -digits), digits))
     return numbers

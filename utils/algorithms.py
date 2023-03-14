@@ -41,3 +41,8 @@ def primes_less_than(n):
         if is_prime[i]:
             primes.append(i)
     return primes
+
+
+# Recortar sin redondear
+def truncate_float(n, places):
+    return int(n * 10 ** places) / 10 ** places
