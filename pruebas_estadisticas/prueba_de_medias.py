@@ -1,8 +1,10 @@
 import math
 from scipy.stats import norm
 
+from pruebas_estadisticas import Status
 
-def prueba_de_medias(numbers: [int], acceptance_level: float) -> bool:
+
+def prueba_de_medias(numbers: [int], acceptance_level: float) -> Status:
     n = len(numbers)
     mean = sum(numbers) / n
     alpha = 1 - acceptance_level
@@ -13,4 +15,4 @@ def prueba_de_medias(numbers: [int], acceptance_level: float) -> bool:
     print(f'z_score: {z_score}')
     print(f'lower_limit: {lower_limit}')
     print(f'upper_limit: {upper_limit}')
-    return True if lower_limit < mean < upper_limit else False
+    return Status.ACCEPTED if lower_limit < mean < upper_limit else Status.REJECTED
