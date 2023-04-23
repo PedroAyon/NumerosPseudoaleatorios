@@ -15,12 +15,8 @@ class Category(Enum):
 
 
 def get_category(n, decimals) -> Category:
-    try:
-        n = truncate_float(n, decimals)
-        n = n[str(n).index('.') + 1:]
-    except Exception as e:
-        print(n)
-        return None
+    n = truncate_float(n, decimals)
+    n = n[str(n).index('.') + 1:]
     while len(n) < decimals:
         n += '0'
     frequencies = {}
