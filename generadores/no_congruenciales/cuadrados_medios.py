@@ -1,19 +1,17 @@
 from utils import *
 
-filepath = 'C:/Users/pedro/Dev/Simulacion/NumerosPseudoaleatorios/data/cuadrados_medios.json'
-
 
 def cuadrados_medios():
-    print("Algoritmo de Cuadrados Medios")
     try:
         seed = valid_integer(input('Semilla X0: '), positive=True, min_digits=3)
         iterations = valid_integer(input('Número de iteraciones: '), positive=True, max_value=1000)
         data = {
+            "metodo": 'cuadrados_medios',
             "X0": seed,
             "iteraciones": iterations,
             "numeros": generate_numbers(seed, iterations)
         }
-        write_json_file(filepath, data)
+        return data
     except Exception as e:
         print(f"Error: {e}")
 

@@ -44,5 +44,5 @@ def primes_less_than(n):
 
 
 # Recortar sin redondear
-def truncate_float(n, places):
-    return int(n * 10 ** places) / 10 ** places
+def truncate_float(number, decimal_places):
+    return "{:.{}f}".format(number, decimal_places)

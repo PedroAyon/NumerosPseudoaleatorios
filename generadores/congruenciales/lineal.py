@@ -1,10 +1,7 @@
 from utils import *
 
-filepath = 'C:/Users/pedro/Dev/Simulacion/NumerosPseudoaleatorios/data/lineal.json'
-
 
 def lineal():
-    print("Algoritmo Lineal")
     try:
         seed = valid_integer(input('Semilla X0: '), positive=True)
         k = valid_integer(input('k: '), positive=True)
@@ -16,6 +13,7 @@ def lineal():
         a = 1 + 4 * k
         iterations = valid_integer(input('Número de iteraciones: '), positive=True, max_value=1000)
         data = {
+            "metodo": 'lineal',
             "X0": seed,
             "k": k,
             "c": c,
@@ -23,7 +21,7 @@ def lineal():
             "iteraciones": iterations,
             "numeros": generate_numbers(seed, a, c, m, iterations)
         }
-        write_json_file(filepath, data)
+        return data
     except Exception as e:
         print(f"Error: {e}")
 
