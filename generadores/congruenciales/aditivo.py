@@ -11,8 +11,7 @@ def aditivo():
             seeds.append(valid_integer(seed, positive=True))
         m = valid_integer(input('m: '), positive=True)
         iterations = valid_integer(input('Número de iteraciones: '), positive=True, max_value=1000)
-        data = {}
-        data['metodo'] = 'aditivo'
+        data = {'metodo': 'aditivo'}
         for i in range(n):
             data[f'X{i + 1}'] = seeds[i]
         data['m'] = m
@@ -28,5 +27,5 @@ def generate_numbers(n, seeds: [int], m, iterations):
         xi = (seeds[n - 1] + seeds[0]) % m
         seeds.pop(0)
         seeds.append(xi)
-        numbers.append(truncate_float(xi / (m - 1), 4))
+        numbers.append(truncate_float(xi / (m - 1), 5))
     return numbers

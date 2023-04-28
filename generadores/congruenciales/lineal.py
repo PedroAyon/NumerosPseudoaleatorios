@@ -30,5 +30,5 @@ def generate_numbers(seed, a, c, m, iterations):
     numbers = []
     for i in range(iterations):
         seed = (a * seed + c) % m
-        numbers.append(truncate_float(seed / (m - 1), 4))
+        numbers.append(truncate_float(seed / (m - 1), 5))
     return numbers

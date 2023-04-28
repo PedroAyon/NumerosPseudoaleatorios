@@ -1,14 +1,14 @@
 from utils import *
 
 
-def multiplicativo(seed, k, g, iterations):
+def multiplicativo():
     try:
-        # seed = valid_integer(input('Semilla X0: '), positive=True)
-        # k = valid_integer(input('k: '), positive=True)
-        # g = valid_integer(input('g: '), positive=True)
+        seed = valid_integer(input('Semilla X0: '), positive=True)
+        k = valid_integer(input('k: '), positive=True)
+        g = valid_integer(input('g: '), positive=True)
         m = pow(2, g)
         a = 5 + 8 * k
-        # iterations = valid_integer(input('Número de iteraciones: '), positive=True, max_value=1000)
+        iterations = valid_integer(input('Número de iteraciones: '), positive=True, max_value=1000)
         data = {
             "metodo": 'multiplicativo',
             "X0": seed,

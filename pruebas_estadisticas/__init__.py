@@ -17,7 +17,7 @@ def aplicar_pruebas_estadisticas(numbers: [int], acceptance_level=0.95, decimals
     }
     final_status = Status.APPROVED
     for test in statuses:
-        # print(f'{test}: {statuses[test]}')
+        print(f'{test}: {statuses[test]}')
         if statuses[test] == Status.FAILED.value:
             final_status = Status.FAILED
     return final_status
